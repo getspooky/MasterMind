@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/getspooky/MasterMind/issues"
   },
-  "homepage": "https://github.com/getspooky/MasterMind#readme"
+  "homepage": "https://github.com/getspooky/MasterMind#readme",
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
 }
