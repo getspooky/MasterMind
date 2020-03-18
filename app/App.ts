@@ -22,7 +22,21 @@ import "./Environment";
 if (process.env.APP_ENV === "development") {
   // only use in development
 }
+
 // Create Express server
 const app = express();
+
+// parse application/x-www-form-urlencoded
+app.use(
+  bodyParser.urlencoded({
+    extended: false
+  })
+);
+
+// parse application/json
+app.use(bodyParser.json());
+
+// override with POST having ?_method=DELETE
+app.use(methodOverride("_method"));
 
 export default app;
