@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { Router } from "express";
+import { Router, Request, Response } from "express";
 import * as core from "express-serve-static-core";
 
 /*
@@ -21,6 +21,8 @@ import * as core from "express-serve-static-core";
 
 export const Route: core.Router = Router();
 
-Route.get("/test", (req, res) => {
+Route.get("/test", (req: Request, res: Response): void => {
   res.status(200).send("Welcome to MasterMind");
 });
+
+Route.get("/", (req: Request, res: Response): void => res.render("Welcome"));
