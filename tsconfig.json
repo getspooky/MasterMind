@@ -1,37 +1,15 @@
 {
-    "compilerOptions": {
-        "baseUrl": ".",
-        "target": "es6",
-        "module": "commonjs",
-        "outDir": "dist",
-        "sourceMap": true,
-        "strict": true,
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "lib": [
-            "dom",
-            "es2017"
-        ],
-        "skipLibCheck": true,
-        "noEmit": true,
-        "paths": {
-            "@/*": [
-                "src/*"
-            ],
-            "#/*": [
-                "test/*"
-            ]
-        },
-        "typeRoots": [
-            "types"
-        ],
-    },
-    "exclude": [
-        "node_modules",
-    ],
-    "include": [
-        "src/**/*.ts",
-        "test/**/*.ts",
-        "types/**/*.d.ts"
-    ]
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "dist",
+    "allowJs": true,
+    "lib": ["dom", "es6"],
+    "esModuleInterop": true,
+    "baseUrl": "./app"
+  },
+  "exclude": ["node_modules", "dist"],
+  "include": ["app/**/*.ts", "tests/**/*.spec.ts"]
 }
