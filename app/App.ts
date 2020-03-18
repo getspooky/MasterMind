@@ -11,7 +11,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import methodOverride from "method-override";
 import { compose } from "compose-middleware";
-import "./environment";
+import "./Environment";
 
 /*
 |-----------------------------------------------------------------------------
