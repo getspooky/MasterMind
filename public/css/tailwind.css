@@ -12,5 +12,9 @@
 
 /* Your custom CSS here */
 body {
-    background-color: #f7fafc !important;
+    background-color: #fff !important;
+}
+
+.border-underline {
+    border-bottom: 2px solid #63b3ed;
 }
