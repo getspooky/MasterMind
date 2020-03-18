@@ -4,7 +4,8 @@
   "description": "It is a non-profit humanitarian initiative that aims to serve the community through programming",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon app/Server.ts"
   },
   "repository": {
     "type": "git",
@@ -39,6 +40,7 @@
     "@types/node": "^13.9.1",
     "chalk": "^3.0.0",
     "ip": "^1.1.5",
+    "nodemon": "^2.0.2",
     "tslint-config-airbnb": "^5.11.1"
   }
 }
