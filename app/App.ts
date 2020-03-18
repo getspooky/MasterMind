@@ -11,8 +11,10 @@ import express from "express";
 import bodyParser from "body-parser";
 import methodOverride from "method-override";
 import helmet from "helmet";
-import { compose } from "compose-middleware";
 import "./Environment";
+import { compose } from "compose-middleware";
+import { Route } from "../routes/web";
+import { DetectProxy } from "./Middlewares/DetectProxy";
 
 /*
 |-----------------------------------------------------------------------------
@@ -42,5 +44,8 @@ app.use(bodyParser.json());
 
 // override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
+
+// load API Routes
+app.use(compose(DetectProxy, Route));
 
 export default app;
