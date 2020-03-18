@@ -13,6 +13,9 @@
  * @param { string | number | boolean } value
  * @returns {string}
  */
-export function env(key: string, value: string | number | boolean = null) {
-  return process.env[key] || value;
+export function env(
+  key: string,
+  value: string | number | boolean = null
+): string {
+  return (process.env[key] || value) as string;
 }
