@@ -10,6 +10,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import methodOverride from "method-override";
+import helmet from "helmet";
 import { compose } from "compose-middleware";
 import "./Environment";
 
@@ -25,6 +26,9 @@ if (process.env.APP_ENV === "development") {
 
 // Create Express server
 const app = express();
+
+// set various HTTP headers to help protect your server
+app.use(helmet());
 
 // parse application/x-www-form-urlencoded
 app.use(
