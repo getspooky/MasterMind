@@ -16,7 +16,10 @@
     "url": "https://github.com/getspooky/MasterMind/issues"
   },
   "homepage": "https://github.com/getspooky/MasterMind#readme",
-  "devDependencies": {
+  "dependencies": {
     "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "tslint-config-airbnb": "^5.11.1"
   }
 }

@@ -4,6 +4,5 @@
     "editor.formatOnSave": true,
     "eslint.enable": true,
     "javascript.format.enable": false,
-    "prettier.eslintIntegration": true,
     "editor.snippetSuggestions": "top"
 }
