@@ -1,0 +1,19 @@
+{
+  "name": "mastermind",
+  "version": "1.0.0",
+  "description": "It is a non-profit humanitarian initiative that aims to serve the community through programming",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getspooky/MasterMind.git"
+  },
+  "author": "Yasser Ameur El Idrissi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/getspooky/MasterMind/issues"
+  },
+  "homepage": "https://github.com/getspooky/MasterMind#readme"
+}
