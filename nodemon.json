@@ -1,0 +1,18 @@
+{
+  "restartable": "rs",
+  "ignore": [".git", "tests", "node_modules/**/node_modules"],
+  "verbose": true,
+  "execMap": {
+    "js": "node"
+  },
+  "watch": ["app"],
+  "events": {
+    "start": "echo 'Server started'",
+    "restart": "echo 'Server started'",
+    "crash": "echo 'Server failed to start : ❌❌❌'"
+  },
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "ts,js"
+}
