@@ -10,6 +10,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import methodOverride from "method-override";
+import pug from "pug";
 import helmet from "helmet";
 import "./Environment";
 import { compose } from "compose-middleware";
@@ -28,6 +29,9 @@ if (process.env.APP_ENV === "development") {
 
 // Create Express server
 const app = express();
+
+// Setup pug template engine to use with express js
+app.set("view engine", "pug");
 
 // set various HTTP headers to help protect your server
 app.use(helmet());
