@@ -57,6 +57,9 @@ export function DetectProxy(req: Request, res: Response, next: Function) {
       headers.some(header => typeof req.headers[header] !== "undefined")
     ) {
       // tests whether at least one element in the array passes the test
+      new TypeError(
+        "The HTTP request contains headers with conflicting information"
+      );
     }
     next();
   } catch (err) {
