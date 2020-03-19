@@ -9,6 +9,7 @@
 
 import chalk from "chalk";
 import ip from "ip";
+import { connect } from "mongoose";
 import { LoggerInterface } from "./Interfaces/LoggerInterface";
 
 const divider: string = chalk.gray("\n-----------------------------------");
@@ -20,6 +21,13 @@ export const logger: LoggerInterface = {
   // Called whenever there's an error on the server we want to print
   error: err => {
     console.error(chalk.red(err));
+  },
+
+  // Called when mongodb starts
+  databaseStarted: (uris, options) => {
+    return connect(uris, options).then(() =>
+      console.log(`Databse started ! ${chalk.green("✓")}`)
+    );
   },
 
   // Called when express.js app starts on given port w/o errors
