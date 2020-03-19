@@ -9,6 +9,8 @@
 
 import { Router, Request, Response } from "express";
 import * as core from "express-serve-static-core";
+import LoginController from "../app/Controllers/LoginController";
+import RegisterController from "../app/Controllers/RegisterController";
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +28,7 @@ Route.get("/test", (req: Request, res: Response): void => {
 });
 
 Route.get("/", (req: Request, res: Response): void => res.render("Welcome"));
+
+Route.get("/login", LoginController.index);
+
+Route.get("/register", RegisterController.index);
