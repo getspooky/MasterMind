@@ -50,6 +50,7 @@
     "ip": "^1.1.5",
     "nodemon": "^2.0.2",
     "postcss-cli": "^7.1.0",
+    "supertest": "^4.0.2",
     "tslint-config-airbnb": "^5.11.1"
   }
 }
