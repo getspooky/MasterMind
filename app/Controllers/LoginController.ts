@@ -61,11 +61,9 @@ const login = async function(
     return new TypeError("The given inputs was Invalid");
   // Attempt to log the user into the application.
   const attemptLogin = await User.findOne({ email });
-  if (
-    !attemptLogin &&
-    !(await User.comparePassword(password, attemptLogin.password))
-  )
-    return new TypeError("Account does not exists!");
+  if (!attemptLogin) throw new TypeError("Account does not exists!");
+  if (!(await User.comparePassword(password, attemptLogin.password)))
+    throw new TypeError("Password Incorrect !");
   // store session id
   req.session.user_id_token = generateSessionKey(
     email,
