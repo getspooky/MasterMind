@@ -22,7 +22,7 @@ type ServiceType = "Login" | "Register";
  * @param {ServiceType} service
  * @returns {Array<ValidationChain>}
  */
-const validator: Function = function(
+export const Validator: Function = function(
   service: ServiceType
 ): Array<ValidationChain> {
   return [
