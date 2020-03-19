@@ -32,3 +32,5 @@ Route.get("/", (req: Request, res: Response): void => res.render("Welcome"));
 Route.get("/login", LoginController.index);
 
 Route.get("/register", RegisterController.index);
+
+Route.post("/register", RegisterController.register);
