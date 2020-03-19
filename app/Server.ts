@@ -8,6 +8,7 @@
  */
 
 import app from "./App";
+import { env } from "../helpers";
 import { logger } from "./Logger";
 
 /**
@@ -15,14 +16,22 @@ import { logger } from "./Logger";
  *
  * @var {number}
  */
-const port: number = parseInt(process.env.APP_PORT) || 4200;
+const port: number = parseInt(env("APP_PORT")) || 3000;
 
-const prettyHost: string = process.env.APP_HOST || "localhost";
+const prettyHost: string = env("APP_HOST") || "localhost";
+
+const dbHost: string = `mongodb://${env("DB_HOST")}/${env("DB_NAME")}`;
 
 // Start your app.
 app.listen(port, prettyHost, async err => {
   if (err) {
     return logger.error(err.message);
   }
+  await logger.databaseStarted(dbHost, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true
+  });
   logger.appStarted(port, prettyHost);
 });
