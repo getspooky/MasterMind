@@ -7,10 +7,8 @@
  * file that was distributed with this source code.
  */
 
-import { ConnectionOptions } from "mongoose";
-
-export interface LoggerInterface {
-  error(err: any): void;
-  databaseStarted(uris: string, options: ConnectionOptions): Promise<void>;
-  appStarted(port: number, host: string, tunnelStarted?): void;
+export interface RegisterInterface {
+  username: string;
+  email: string;
+  password: string;
 }
