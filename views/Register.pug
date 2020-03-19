@@ -1,24 +1,24 @@
 extends App.pug
 block content
-    form.m-auto.w-full.max-w-lg.mt-24
+    form.m-auto.w-full.max-w-lg.mt-24(method="post",action="/register")
       .mb-6(class='md:flex md:items-center')
         .div(class='md:w-1/3')
-          label.block.text-gray-500.font-bold.mb-1.pr-4(class='md:text-right md:mb-0' for='inline-username')
+          label.block.text-gray-500.font-bold.mb-1.pr-4(class='md:text-right md:mb-0' ,for='inline-username' ,name="username")
             | Username
         .div(class='md:w-2/3')
-           input#inline-username.bg-gray-200.appearance-none.border-2.border-gray-200.rounded.w-full.py-2.px-4.text-gray-700.leading-tight(class='focus:outline-none focus:bg-white focus:border-purple-500' ,type='text' ,value='getspooky')
+           input#inline-username.bg-gray-200.appearance-none.border-2.border-gray-200.rounded.w-full.py-2.px-4.text-gray-700.leading-tight(class='focus:outline-none focus:bg-white focus:border-blue-500' ,type='text' ,value='getspooky', name="username")
       .mb-6(class='md:flex md:items-center')
         .div(class='md:w-1/3')
           label.block.text-gray-500.font-bold.mb-1.pr-4(class='md:text-right md:mb-0' for='inline-email')
             | Email
         .div(class='md:w-2/3')
-           input#inline-email.bg-gray-200.appearance-none.border-2.border-gray-200.rounded.w-full.py-2.px-4.text-gray-700.leading-tight(class='focus:outline-none focus:bg-white focus:border-purple-500' ,type='email' ,value='example@gmail.com')
+           input#inline-email.bg-gray-200.appearance-none.border-2.border-gray-200.rounded.w-full.py-2.px-4.text-gray-700.leading-tight(class='focus:outline-none focus:bg-white focus:border-blue-500' ,type='email' ,value='example@gmail.com', name="email")
       .mb-6(class='md:flex md:items-center')
         .div(class='md:w-1/3')
            label.block.text-gray-500.font-bold.mb-1.pr-4(class='md:text-right md:mb-0' for='inline-password')
             | Password
         .div(class='md:w-2/3')
-           input#inline-password.bg-gray-200.appearance-none.border-2.border-gray-200.rounded.w-full.py-2.px-4.text-gray-700.leading-tight(class='focus:outline-none focus:bg-white focus:border-purple-500', type='password', placeholder='******************')
+           input#inline-password.bg-gray-200.appearance-none.border-2.border-gray-200.rounded.w-full.py-2.px-4.text-gray-700.leading-tight(class='focus:outline-none focus:bg-white focus:border-blue-500', type='password', placeholder='******************', name="password")
       .mb-6(class='md:flex md:items-center')
         .div(class='md:w-1/3')
         label.block.text-gray-500.font-bold(class='md:w-2/3')
@@ -27,4 +27,4 @@ block content
       .div(class='md:flex md:items-center')
         .div(class='md:w-1/3')
         .div(class='md:w-2/3')
-          button.shadow.bg-blue-500.text-white.font-bold.py-2.px-4.rounded(class='hover:bg-purple-400 focus:shadow-outline focus:outline-none' type='button') Sign Up
+          button.shadow.bg-blue-500.text-white.font-bold.py-2.px-4.rounded(class='hover:bg-blue-400 focus:shadow-outline focus:outline-none' ,type='submit') Sign Up
