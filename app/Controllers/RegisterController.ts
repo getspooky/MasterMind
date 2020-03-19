@@ -62,7 +62,7 @@ const register = () =>
     if (!validationResult(req).isEmpty)
       return new TypeError("The given inputs was Invalid");
     if (await User.findOne({ email }))
-      return new TypeError("Account already exists!");
+      throw new TypeError("Account already exists!");
     // Create a new Instance.
     const attemptRegister = await new User({
       email,
