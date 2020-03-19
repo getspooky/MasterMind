@@ -11,7 +11,7 @@ import mongoose, { Model } from "mongoose";
 import { hash, compare } from "bcrypt";
 import { env } from "../../helpers";
 import { CreateUserSchema } from "../../database/schemas/2020_03_18_create_user_schema";
-import { UserModelInterface } from "../Interfaces/UserInterface";
+import { UserModelInterface, UserInterface } from "../Interfaces/UserInterface";
 
 const salt: string = env("dsd");
 // pre save middleware.
@@ -45,6 +45,7 @@ CreateUserSchema.statics.comparePassword = async function(
   }
 };
 
-export const User: Model<UserModelInterface> = mongoose.model<
-  UserModelInterface
->("User", CreateUserSchema);
+export default mongoose.model<UserInterface, UserModelInterface>(
+  "User",
+  CreateUserSchema
+);

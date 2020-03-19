@@ -7,12 +7,14 @@
  * file that was distributed with this source code.
  */
 
-import { Document } from "mongoose";
+import { Model, Document } from "mongoose";
 
-export interface UserInterface {
+export interface UserInterface extends Document {
   username: string;
   email: string;
   password: string;
 }
 
-export interface UserModelInterface extends UserInterface, Document {}
+export interface UserModelInterface extends Model<UserInterface> {
+  comparePassword(password: string, hash: string): Promise<boolean | TypeError>;
+}
