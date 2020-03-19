@@ -25,7 +25,7 @@ type ServiceType = "Login" | "Register";
 export const Validator: Function = function(
   service: ServiceType
 ): Array<ValidationChain> {
-  return [
+  const rules: Array<ValidationChain> = [
     check("email")
       .not()
       .isEmpty()
@@ -38,16 +38,18 @@ export const Validator: Function = function(
       .withMessage("Password is missing")
       .isLength({
         min: 10
-      }),
-    service === "Register"
-      ? check("username")
-          .not()
-          .isEmpty()
-          .withMessage("Username is missing")
-          .isLength({
-            min: 10
-          })
-          .withMessage("Username must have more than 10 characters")
-      : null
+      })
   ];
+  if (service === "Register")
+    rules.push(
+      check("username")
+        .not()
+        .isEmpty()
+        .withMessage("Username is missing")
+        .isLength({
+          min: 10
+        })
+        .withMessage("Username must have more than 10 characters")
+    );
+  return rules;
 };
