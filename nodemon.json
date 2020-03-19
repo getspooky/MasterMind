@@ -5,7 +5,7 @@
   "execMap": {
     "js": "node"
   },
-  "watch": ["app"],
+  "watch": ["app", "routes", "database"],
   "events": {
     "start": "echo 'Server started'",
     "restart": "echo 'Server started'",
