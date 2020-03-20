@@ -12,6 +12,7 @@ import { Model, Document } from "mongoose";
 export interface ArticleInterface extends Document {
   title: string;
   content: string;
+  status: boolean;
   category?: Array<string>;
 }
 
