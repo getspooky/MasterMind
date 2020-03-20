@@ -11,8 +11,6 @@ import { Request, Response } from "express";
 import { validationResult } from "express-validator";
 import { LoginInterface } from "../Interfaces/LoginInterface";
 import { SessionInterface } from "../Interfaces/SessionInterface";
-import { generateSessionKey } from "../Controllers/RegisterController";
-import { env } from "../../helpers";
 import User from "../Models/User";
 
 /*
@@ -29,7 +27,7 @@ import User from "../Models/User";
  * @desc Where to redirect users after login.
  * @type {URL|string}
  */
-const redirectTo: URL | string = "/courses";
+const redirectTo: URL | string = "/profile";
 
 /**
  * @desc Display a listing of the resource.
@@ -65,11 +63,7 @@ const login = async function(
   if (!(await User.comparePassword(password, attemptLogin.password)))
     throw new TypeError("Password Incorrect !");
   // store session id
-  req.session.user_id_token = generateSessionKey(
-    email,
-    attemptLogin._id,
-    env("SESSION_GENERATOR")
-  );
+  req.session.user_id_token = attemptLogin._id;
   return res.status(201).redirect(redirectTo);
 };
 
