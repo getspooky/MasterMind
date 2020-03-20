@@ -10,7 +10,6 @@
 import { Request, Response } from "express";
 import { validationResult } from "express-validator";
 import User from "../Models/User";
-import { env } from "../../helpers";
 import { RegisterInterface } from "../Interfaces/RegisterInterface";
 import { SessionInterface } from "../Interfaces/SessionInterface";
 
@@ -52,43 +51,26 @@ const index = function(req: Request, res: Response): void {
  * @param {Response} res
  * @returns {void}
  */
-const register = () =>
-  async function(
-    req: SessionInterface,
-    res: Response
-  ): Promise<void | TypeError> {
-    const { username, email, password }: RegisterInterface = { ...req.body };
-    // Finds the validation errors in this request and wraps them in an object with handy functions
-    if (!validationResult(req).isEmpty)
-      return new TypeError("The given inputs was Invalid");
-    if (await User.findOne({ email }))
-      throw new TypeError("Account already exists!");
-    // Create a new Instance.
-    const attemptRegister = await new User({
-      email,
-      username,
-      password
-    }).save();
+const register = async function(
+  req: SessionInterface,
+  res: Response
+): Promise<void | TypeError> {
+  const { username, email, password }: RegisterInterface = { ...req.body };
+  // Finds the validation errors in this request and wraps them in an object with handy functions
+  if (!validationResult(req).isEmpty)
+    throw new TypeError("The given inputs was Invalid");
+  if (await User.findOne({ email }))
+    throw new TypeError("Account already exists!");
+  // Create a new Instance.
+  const attemptRegister = await new User({
+    email,
+    username,
+    password
+  }).save();
+  if (!attemptRegister)
     // store session id
-    req.session.user_id_token = generateSessionKey(
-      email,
-      attemptRegister._id,
-      env("SESSION_GENERATOR")
-    );
-    return res.status(201).redirect(redirectTo);
-  };
-
-/**
- * @public
- * @desc Generate Session Unique key.
- * @function
- * @name generateSessionKey
- * @param {any} args
- * @returns {string}
- */
-export const generateSessionKey = function(...args): string {
-  // Implement your generate session key signature.
-  return "";
+    req.session.user_id_token = attemptRegister._id;
+  return res.status(201).redirect(redirectTo);
 };
 
 export default { index, register };
