@@ -39,7 +39,7 @@ const redirectTo: string = "/profile";
  * @returns {void}
  */
 const index = function(req: Request, res: Response): void {
-  return res.status(200).render("Register");
+  return res.status(200).render("Register", { csrfToken: req.csrfToken() });
 };
 
 /**

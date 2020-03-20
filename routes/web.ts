@@ -7,17 +7,24 @@
  * file that was distributed with this source code.
  */
 
-import { Router, Request, Response } from "express";
+import { Router, Request, Response, RequestHandler } from "express";
 import * as core from "express-serve-static-core";
 import { compose as ComposeMiddleware } from "compose-middleware";
+import csrf from "csurf";
 import LoginController from "../app/Controllers/LoginController";
 import RegisterController from "../app/Controllers/RegisterController";
 import ArticleController from "../app/Controllers/ArticleController";
-import ProfileController from "../app/Controllers/ArticleController";
+import ProfileController from "../app/Controllers/ProfileController";
 import LoginValidator from "../app/Validators/Login";
 import RegisterValidator from "../app/Validators/Register";
 import ArticleValidator from "../app/Validators/Article";
 import { Authenticated } from "../app/Middlewares/Authenticated";
+
+/**
+ * @desc Preventing Cross Site Request Forgery (CSRF)
+ * @type {RequestHandler}
+ */
+const csrfProtection: RequestHandler = csrf({ cookie: true });
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +37,8 @@ import { Authenticated } from "../app/Middlewares/Authenticated";
 
 export const Route: core.Router = Router();
 
+Route.use(csrfProtection);
+
 Route.get("/test", (req: Request, res: Response): void => {
   res.status(200).send("Welcome to MasterMind");
 });
@@ -38,22 +47,32 @@ Route.get("/", (req: Request, res: Response): void => res.render("Welcome"));
 
 Route.get("/login", LoginController.index);
 
-Route.post("/login", LoginValidator(), LoginController.login);
+Route.post(
+  "/login",
+  ComposeMiddleware(LoginValidator()),
+  LoginController.login
+);
 
 Route.get("/register", RegisterController.index);
 
-Route.post("/register", RegisterValidator(), RegisterController.register);
+Route.post(
+  "/register",
+  ComposeMiddleware(RegisterValidator()),
+  RegisterController.register
+);
 
 // Routes that require authentication
 
 Route.get("/profile", Authenticated, ProfileController.index);
 
-Route.get("/articles", Authenticated, ArticleController.index);
+Route.get("/articles", ArticleController.index);
+
+Route.get("/article/details", ArticleController.show);
 
 Route.get("/article/create", Authenticated, ArticleController.create);
 
 Route.post(
   "/article",
-  ComposeMiddleware([Authenticated, ArticleValidator()]),
+  ComposeMiddleware([Authenticated, csrfProtection, ArticleValidator()]),
   ArticleController.store
 );
