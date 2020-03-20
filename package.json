@@ -54,6 +54,7 @@
     "@types/mongoose": "^5.7.6",
     "@types/node": "^13.9.1",
     "chalk": "^3.0.0",
+    "express-telescope": "^1.0.2",
     "faker": "^4.1.0",
     "ip": "^1.1.5",
     "jest": "^25.1.0",
