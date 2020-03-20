@@ -10,9 +10,13 @@
 import express from "express";
 import bodyParser from "body-parser";
 import methodOverride from "method-override";
-import pug from "pug";
+import session from "express-session";
+import path from "path";
 import helmet from "helmet";
+import i18n from "i18n";
+import "./Internationalization";
 import "./Environment";
+import { env } from "../helpers";
 import { compose } from "compose-middleware";
 import { Route } from "../routes/web";
 import { DetectProxy } from "./Middlewares/DetectProxy";
@@ -29,6 +33,9 @@ if (process.env.APP_ENV === "development") {
 
 // Create Express server
 const app = express();
+
+// Serve static files such as images, CSS files, and JavaScript files,
+app.use("/static", express.static(path.join(__dirname, "../public")));
 
 // Setup pug template engine to use with express js
 app.set("view engine", "pug");
@@ -48,6 +55,17 @@ app.use(bodyParser.json());
 
 // override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
+
+// use session to authenticate users
+app.use(
+  session({
+    secret: env("SESSION_SECRET"),
+    resave: false,
+    saveUninitialized: false
+  })
+);
+
+app.use(i18n.init);
 
 // load API Routes
 app.use(compose(DetectProxy, Route));
