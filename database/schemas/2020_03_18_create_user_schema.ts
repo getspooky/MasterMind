@@ -13,12 +13,12 @@ import { Schema } from "mongoose";
 export const CreateUserSchema: Schema = new Schema(
   {
     username: {
-      type: String,
+      type: Schema.Types.String,
       required: true,
       minLength: 10
     },
     email: {
-      type: String,
+      type: Schema.Types.String,
       required: true,
       minLength: 5,
       validate: {
@@ -31,19 +31,19 @@ export const CreateUserSchema: Schema = new Schema(
       }
     },
     password: {
-      type: String,
+      type: Schema.Types.String,
       required: true,
       minLength: 10
     },
     email_verified_at: {
-      type: Boolean,
+      type: Schema.Types.Boolean,
       required: false,
       default: false
     },
     // Reset Password Schema
     reset: {
       token: {
-        type: String,
+        type: Schema.Types.String,
         required: false,
         length: 90,
         expires: "15m"
