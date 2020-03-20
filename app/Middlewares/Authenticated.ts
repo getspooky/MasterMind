@@ -26,7 +26,7 @@ export const Authenticated = function(
   next: Function
 ): boolean | void {
   if (
-    req.session.user_id_token !== null ||
+    req.session.user_id_token === null ||
     typeof req.session.user_id_token === "undefined"
   )
     return res.redirect("/");
