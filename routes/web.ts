@@ -9,8 +9,12 @@
 
 import { Router, Request, Response } from "express";
 import * as core from "express-serve-static-core";
+import { compose as ComposeMiddleware } from "compose-middleware";
 import LoginController from "../app/Controllers/LoginController";
 import RegisterController from "../app/Controllers/RegisterController";
+import ArticleController from "../app/Controllers/ArticleController";
+import { Validator } from "../app/Middlewares/Validator";
+import { Authenticated } from "../app/Middlewares/Authenticated";
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +35,22 @@ Route.get("/", (req: Request, res: Response): void => res.render("Welcome"));
 
 Route.get("/login", LoginController.index);
 
+Route.post("/login", Validator("Login"), LoginController.login);
+
 Route.get("/register", RegisterController.index);
 
-Route.post("/register", RegisterController.register);
+Route.post("/register", Validator("Register"), RegisterController.register);
+
+// Routes that require authentication
+
+Route.get("/profile", Authenticated, (req, res) => res.render("Profile"));
+
+Route.get("/articles", Authenticated, ArticleController.index);
+
+Route.get("/article/create", Authenticated, ArticleController.create);
+
+Route.post(
+  "/article",
+  ComposeMiddleware([Authenticated]),
+  ArticleController.store
+);
