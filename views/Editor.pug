@@ -1,0 +1,23 @@
+extends App.pug
+block content
+  form#form(method="post",action="/article")
+   input.mt-10.border.border-gray-400.w-full.py-2.px-3.text-gray-700.leading-tight(class='focus:outline-none focus:shadow-outline' ,style="border-bottom:0px solid transparent !important;",type='text', name="title", placeholder='Title')
+   div#editor-container
+   input#content(type="hidden",name="content")
+   button.w-full.mb-6.mt-2.text-white.font-semibold.py-2.px-4.bg-blue-400.rounded.shadow(type="button",onClick="SubmitQuill()")
+    i.fa.fa-paper-plane.pr-2
+    | Publish
+   script(src="/static/js/quill.js")
+   script.
+    var quill = new Quill('#editor-container', {
+    modules: {
+     toolbar: [
+      [{ header: [1, 2, false] }],['bold', 'italic', 'underline'],['image', 'code-block']]
+    },
+    placeholder: 'Compose an epic...',
+    theme: 'snow'  // or 'bubble'
+    });
+    function SubmitQuill() {
+      document.getElementById("content").value = JSON.stringify(quill.getContents());
+      document.getElementById("form").submit();
+    }
