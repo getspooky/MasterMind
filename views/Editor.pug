@@ -1,6 +1,7 @@
 extends App.pug
 block content
   form#form(method="post",action="/article")
+   input(type="hidden", value=csrfToken, name="_csrf")
    input.mt-10.border.border-gray-400.w-full.py-2.px-3.text-gray-700.leading-tight(class='focus:outline-none focus:shadow-outline' ,style="border-bottom:0px solid transparent !important;",type='text', name="title", placeholder='Title')
    div#editor-container
    input#content(type="hidden",name="content")
