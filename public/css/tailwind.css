@@ -18,3 +18,7 @@ body {
 .border-underline {
     border-bottom: 2px solid #63b3ed;
 }
+
+#editor-container {
+    height: 400px !important;
+}
