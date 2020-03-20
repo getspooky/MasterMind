@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { Request, Response } from "express";
+import { Request, Response, NextFunction } from "express";
 import { validationResult } from "express-validator";
 import { LoginInterface } from "../Interfaces/LoginInterface";
 import { SessionInterface } from "../Interfaces/SessionInterface";
@@ -51,20 +51,25 @@ const index = function(req: Request, res: Response): void {
  */
 const login = async function(
   req: SessionInterface,
-  res: Response
+  res: Response,
+  next: NextFunction
 ): Promise<void | TypeError> {
-  const { email, password }: LoginInterface = { ...req.body };
-  // Finds the validation errors in this request and wraps them in an object with handy functions
-  if (!validationResult(req).isEmpty)
-    return new TypeError("The given inputs was Invalid");
-  // Attempt to log the user into the application.
-  const attemptLogin = await User.findOne({ email });
-  if (!attemptLogin) throw new TypeError("Account does not exists!");
-  if (!(await User.comparePassword(password, attemptLogin.password)))
-    throw new TypeError("Password Incorrect !");
-  // store session id
-  req.session.user_id_token = attemptLogin._id;
-  return res.status(201).redirect(redirectTo);
+  try {
+    const { email, password }: LoginInterface = { ...req.body };
+    // Finds the validation errors in this request and wraps them in an object with handy functions
+    if (!validationResult(req).isEmpty)
+      return new TypeError("The given inputs was Invalid");
+    // Attempt to log the user into the application.
+    const attemptLogin = await User.findOne({ email });
+    if (!attemptLogin) throw new TypeError("Account does not exists!");
+    if (!(await User.comparePassword(password, attemptLogin.password)))
+      throw new TypeError("Password Incorrect !");
+    // store session id
+    req.session.user_id_token = attemptLogin._id;
+    return res.status(201).redirect(redirectTo);
+  } catch (err) {
+    next(err);
+  }
 };
 
 export default { index, login };

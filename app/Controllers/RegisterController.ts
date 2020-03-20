@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { Request, Response } from "express";
+import { Request, Response, NextFunction } from "express";
 import { validationResult } from "express-validator";
 import User from "../Models/User";
 import { RegisterInterface } from "../Interfaces/RegisterInterface";
@@ -53,24 +53,29 @@ const index = function(req: Request, res: Response): void {
  */
 const register = async function(
   req: SessionInterface,
-  res: Response
+  res: Response,
+  next: NextFunction
 ): Promise<void | TypeError> {
-  const { username, email, password }: RegisterInterface = { ...req.body };
-  // Finds the validation errors in this request and wraps them in an object with handy functions
-  if (!validationResult(req).isEmpty)
-    throw new TypeError("The given inputs was Invalid");
-  if (await User.findOne({ email }))
-    throw new TypeError("Account already exists!");
-  // Create a new Instance.
-  const attemptRegister = await new User({
-    email,
-    username,
-    password
-  }).save();
-  if (!attemptRegister)
-    // store session id
-    req.session.user_id_token = attemptRegister._id;
-  return res.status(201).redirect(redirectTo);
+  try {
+    const { username, email, password }: RegisterInterface = { ...req.body };
+    // Finds the validation errors in this request and wraps them in an object with handy functions
+    if (!validationResult(req).isEmpty)
+      throw new TypeError("The given inputs was Invalid");
+    if (await User.findOne({ email }))
+      throw new TypeError("Account already exists!");
+    // Create a new Instance.
+    const attemptRegister = await new User({
+      email,
+      username,
+      password
+    }).save();
+    if (!attemptRegister)
+      // store session id
+      req.session.user_id_token = attemptRegister._id;
+    return res.status(201).redirect(redirectTo);
+  } catch (err) {
+    next(err);
+  }
 };
 
 export default { index, register };
