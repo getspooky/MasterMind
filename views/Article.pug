@@ -1,0 +1,16 @@
+extends App.pug
+block content
+  .max-w-sm.pt-16.pb-20.w-full(class='lg:max-w-full lg:flex')
+    .border.border-gray-400.bg-white.rounded-b.p-4.flex.flex-col.justify-between.leading-normal
+      .mb-4
+        p.text-sm.text-gray-600.flex.items-center.pb-1
+          i.fa.fa.fa-unlock
+            |  Public Members
+        a.text-gray-900.cursor-pointer.underline.font-bold.text-xl.mb-2(href=`/article/details?id=${article._id}`) #{article.title}
+        p.text-gray-700.text-base
+          | !{convertDeltaToHtml(JSON.parse(article.content))}
+      .flex.items-center
+        img.w-10.h-10.rounded-full.mr-4(src=`https://www.gravatar.com/avatar/${md5(article.userId.email)}?s=32&d=identicon&r=PG` alt='avatar')
+        .text-sm
+          p.text-gray-900.leading-none.capitalize #{article.userId.username}
+          p.text-gray-600.pt-1 #{moment(article.userId.updatedAt).format("MMMM Do YYYY, h:mm:ss a")}
