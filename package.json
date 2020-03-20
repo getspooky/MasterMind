@@ -4,7 +4,6 @@
   "description": "It is a humanitarian initiative that aims to serve the community through programming",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
     "server": "nodemon app/Server.ts",
     "build:css": "postcss public/css/tailwind.css -o public/css/index.css",
     "watch:css": "postcss public/css/tailwind.css -o public/css/index.css -w"
@@ -20,6 +19,7 @@
   },
   "homepage": "https://github.com/getspooky/MasterMind#readme",
   "dependencies": {
+    "@types/i18n": "^0.8.6",
     "bcrypt": "^4.0.1",
     "body-parser": "^1.19.0",
     "compose-middleware": "^5.0.1",
@@ -30,6 +30,7 @@
     "express-session": "^1.17.0",
     "express-validator": "^6.4.0",
     "helmet": "^3.21.3",
+    "i18n": "^0.8.6",
     "method-override": "^3.0.0",
     "mongoose": "^5.9.5",
     "multer": "^1.4.2",
@@ -48,6 +49,7 @@
     "@types/mongoose": "^5.7.6",
     "@types/node": "^13.9.1",
     "chalk": "^3.0.0",
+    "faker": "^4.1.0",
     "ip": "^1.1.5",
     "jest": "^25.1.0",
     "nodemon": "^2.0.2",
@@ -55,5 +57,9 @@
     "supertest": "^4.0.2",
     "ts-jest": "^25.2.1",
     "tslint-config-airbnb": "^5.11.1"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "verbose": true
   }
 }
