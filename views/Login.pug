@@ -1,6 +1,7 @@
 extends App.pug
 block content
     form.m-auto.w-full.max-w-lg.mt-24(method="post",action="/login")
+      input(type="hidden", value=csrfToken, name="_csrf")
       .mb-6(class='md:flex md:items-center')
         .div(class='md:w-1/3')
           label.block.text-gray-500.font-bold.mb-1.pr-4(class='md:text-right md:mb-0' for='inline-email')
