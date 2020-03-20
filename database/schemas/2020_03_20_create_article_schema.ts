@@ -9,19 +9,27 @@
 
 import { Schema } from "mongoose";
 
-/* User Schema */
+/* Article Schema */
 export const CreateArticleSchema: Schema = new Schema(
   {
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: "User"
+    },
     title: {
-      type: String,
+      type: Schema.Types.String,
       required: true,
       minLength: 10,
       maxlength: 200
     },
     content: {
-      type: String,
+      type: Schema.Types.String,
       required: true,
       minLength: 120
+    },
+    status: {
+      type: Schema.Types.Boolean,
+      defaut: false
     }
   },
   { timestamps: true }
