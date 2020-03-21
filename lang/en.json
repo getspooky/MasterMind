@@ -10,5 +10,7 @@
     "global.component.alert.message": "Join Our Community via spectrum.chat",
     "profile.page.title_#1": "Learn computer science ",
     "profile.page.title_#2": "Change the world.",
-    "profile.page.contribute": "The people who contribute to MasterMind do so for the love of open source, our users and ecosystem, and most importantly, pushing the web forward together."
+    "profile.page.contribute": "The people who contribute to MasterMind do so for the love of open source, our users and ecosystem, and most importantly, pushing the web forward together.",
+    "profile.page.button.share.knowledge": "Share knowledge",
+    "profile.page.button.log.out": "Log Out"
 }
