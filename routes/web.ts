@@ -47,11 +47,7 @@ Route.get("/", (req: Request, res: Response): void => res.render("Welcome"));
 
 Route.get("/login", LoginController.index);
 
-Route.post(
-  "/login",
-  ComposeMiddleware(LoginValidator()),
-  LoginController.login
-);
+Route.post("/login", LoginValidator(), LoginController.login);
 
 Route.get("/register", RegisterController.index);
 
