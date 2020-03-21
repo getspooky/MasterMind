@@ -45,6 +45,8 @@ Route.get("/test", (req: Request, res: Response): void => {
 
 Route.get("/", (req: Request, res: Response): void => res.render("Welcome"));
 
+Route.get("/team", (req: Request, res: Response): void => res.render("Team"));
+
 Route.get("/login", LoginController.index);
 
 Route.post("/login", LoginValidator(), LoginController.login);
