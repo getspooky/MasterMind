@@ -1,9 +1,10 @@
-.flex.items-center.justify-between.flex-wrap.mt-2
-  span.pt-4.font-bold.text-blue-500.text-5xl.italic.tracking-tight.fa.fa-graduation-cap |	MS
+.flex.items-center.justify-between.flex-wrap.mt-10
+  .flex.flex-col.items-center
+    img.mt-2(src='/static/assets/logo.png', alt='MasterMind', onClick="Welcome()")
   .nav.block.justify-end(class="lg:flex lg:items-center lg:w-auto")
     .text-blue-400.font-semibold.text-sm.w-full.block.flex-grow(class="lg:flex lg:items-center lg:w-auto")
-      a.mr-4.border-underline(href='') Login
-      a.mr-4.border-underline(href='') Free Courses
-      a.mr-4.border-underline(href='') LiveCast
-      a.mr-4.border-underline(href='') Ask for help
-      a.mr-4.border-underline(href='') Contribute on GitHub
+      a.mr-4.border-underline(href='/login') Login
+      a.mr-4.border-underline(href='/articles') Learn
+      a.mr-4.border-underline(href='https://github.com/getspooky/MasterMind/issues') Ask for help
+      a.mr-4.border-underline(href='/team') Team
+      a.mr-4.border-underline(href='https://github.com/getspooky/MasterMind') Contribute on GitHub
