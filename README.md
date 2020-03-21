@@ -1,4 +1,4 @@
-## 🧠🧠🧠 Learn computer science , Change the world. 🎒🎒🎒
+## 🧠🧠🧠 Learn computer science , Change the world.
 
 Welcome to the MasterMind. We are so excited to have you. With your help, we can build out MasterMind to be more stable and better serve our community.
 
@@ -7,8 +7,8 @@ Welcome to the MasterMind. We are so excited to have you. With your help, we can
     </br>
     <a href="#"><img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/getspooky/MasterMind"></a>
     <img alt="PRs" src="https://img.shields.io/badge/PRs-Welcome-blue" />
-    <a href="https://spectrum.chat/vespa">
-    <img alt="Chat with us on Spectrum" src="https://withspectrum.github.io/badge/badge.svg" />
+    <a href="https://spectrum.chat/mastermind">
+    <img alt="Chat with us on Gitten.mi" src="https://withspectrum.github.io/badge/badge.svg" />
      </a>
 </p>
 <div align="center">
@@ -78,6 +78,9 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
 <p align="center">
- <img src="public/assets/happy.jpeg" />
- Happy Coding ❤️
+ <img src="public/assets/happy.jpeg" width="200" height="200" />
 </p>
+
+<div align="center">
+   Happy Coding ❤️
+</div>
