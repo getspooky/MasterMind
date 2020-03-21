@@ -12,5 +12,7 @@
     "profile.page.title_#2": "Change the world.",
     "profile.page.contribute": "The people who contribute to MasterMind do so for the love of open source, our users and ecosystem, and most importantly, pushing the web forward together.",
     "profile.page.button.share.knowledge": "Share knowledge",
-    "profile.page.button.log.out": "Log Out"
+    "profile.page.button.log.out": "Log Out",
+    "team.page.title": "Meet the Team",
+    "team.page.description": "MasterMind is built by a team of engineers who share a passion for making web development feel effortless."
 }
