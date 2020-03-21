@@ -63,6 +63,8 @@ Route.post(
 
 Route.get("/profile", Authenticated, ProfileController.index);
 
+Route.get("/profile/logout", Authenticated, ProfileController.logOut);
+
 Route.get("/articles", ArticleController.index);
 
 Route.get("/article/details", ArticleController.show);

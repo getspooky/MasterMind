@@ -40,4 +40,4 @@ const logOut = async function(
   return res.redirect("/");
 };
 
-export default { index };
+export default { index, logOut };
