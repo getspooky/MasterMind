@@ -7,7 +7,7 @@
     "welcome.page.support": "Support the Team",
     "welcome.page.support.details": "Through <a href='https://github.com/getspooky/MasterMind' class='underline text-blue-500'>contributions</a>, <a href='' class='underline text-blue-500'>donations</a>, you allow webpack to thrive. Your donations directly support office hours, continued enhancements, and most importantly, great documentation and learning material!",
     "global.component.alert.badge": "New",
-    "global.component.alert.message": "Join Our Community via Gitter.mi",
+    "global.component.alert.message": "Join Our Community via spectrum.chat",
     "profile.page.title_#1": "Learn computer science ",
     "profile.page.title_#2": "Change the world.",
     "profile.page.contribute": "The people who contribute to MasterMind do so for the love of open source, our users and ecosystem, and most importantly, pushing the web forward together."
