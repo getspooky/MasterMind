@@ -5,7 +5,7 @@
     "welcome.page.details": "We believe that citizens need to learn IT and have the thinking skills they need to be creators of the digital economy, not just consumers, and to be active citizens in our technology-driven world . Our economy is evolving rapidly and teachers and business leaders are increasingly recognizing that IT is a new basic skill necessary for economic opportunities and social mobility. ",
     "welcome.page.openSource": "MasterMind is open source software, so not only is it free to use, you can also help make it better It’s easier than you think to become one of them. ",
     "welcome.page.support": "Support the Team",
-    "welcome.page.support.details": "Through <a href='https://github.com/getspooky/MasterMind' class='underline text-blue-500'>contributions</a>, <a href='' class='underline text-blue-500'>donations</a>, you allow webpack to thrive. Your donations directly support office hours, continued enhancements, and most importantly, great documentation and learning material!",
+    "welcome.page.support.details": "Through <a href='https://github.com/getspooky/MasterMind' class='underline text-blue-500'>contributions</a>, <a href='' class='underline text-blue-500'>donations</a>, you allow MasterMind to thrive. Your donations directly support office hours, continued enhancements, and most importantly, great documentation and learning material!",
     "global.component.alert.badge": "New",
     "global.component.alert.message": "Join Our Community via spectrum.chat",
     "profile.page.title_#1": "Learn computer science ",
