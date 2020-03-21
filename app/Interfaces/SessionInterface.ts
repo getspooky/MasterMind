@@ -12,5 +12,6 @@ import { Request } from "express";
 export interface SessionInterface extends Request {
   session: {
     user_id_token: string | number;
+    destroy?: Function;
   };
 }

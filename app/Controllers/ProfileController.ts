@@ -8,7 +8,7 @@
  */
 
 import { Request, Response } from "express";
-import { validationResult } from "express-validator";
+import { SessionInterface } from "../Interfaces/SessionInterface";
 
 /**
  * @public
@@ -21,6 +21,23 @@ import { validationResult } from "express-validator";
  */
 const index = async function(req: Request, res: Response): Promise<void> {
   return res.status(200).render("Profile");
+};
+
+/**
+ * @public
+ * @desc Log Out User.
+ * @function
+ * @name logOut
+ * @param {SessionInterface} req
+ * @param {Response} res
+ * @returns {void}
+ */
+const logOut = async function(
+  req: SessionInterface,
+  res: Response
+): Promise<void> {
+  const destroy: Function = req.session.destroy();
+  return res.redirect("/");
 };
 
 export default { index };
