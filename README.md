@@ -10,7 +10,9 @@ Welcome to the MasterMind. We are so excited to have you. With your help, we can
     <img alt="PRs" src="https://img.shields.io/badge/PRs-Welcome-blue" />
     <a href="https://spectrum.chat/mastermind">
     <img alt="Chat with us on Gitten.mi" src="https://withspectrum.github.io/badge/badge.svg" />
-     </a>
+     </a><br />
+     <img alt="lang" src="https://img.shields.io/badge/lang-javascript-yellow" />
+      <img alt="status" src="https://img.shields.io/badge/status-Development%20Mode-9cf" />
 </p>
 <div align="center">
   <sub>Created and maintained with ❤️ by  <a href="https://github.com/getspooky">getspooky</a>.</sub>
