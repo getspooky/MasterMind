@@ -1,0 +1,24 @@
+extends App.pug
+block content 
+  figure.float-right.-mr-10
+    img.pt-8(src='/static/assets/think.png' alt='So many possibilities.',width="375",height="375")
+  h1.semibold.text-black.mt-12(style="line-height:3.10rem !important;font-size:2.5rem !important;")
+    | #{__lang('welcome.page.title')}
+  p.mt-4.text-gray-900.text-lg.font-serif.leading-loose
+    | #{__lang('welcome.page.description')}  
+  p.text-center.bg-yellow-500.mt-8.mx-40.text-white.text-2xl.font-bold.py-2.px-4.border-b-4.border-yellow-700.rounded(class='hover:bg-yellow-400 hover:border-yellow-500',onClick="SignUp()")
+    i.fa.fa-user-plus.mr-2
+    | #{__lang('welcome.page.signup')}
+  iframe.video.rounded-sm.w-full.mt-12.video(src='https://www.youtube.com/embed/nKIu9yen5nc',frameborder='0',allowfullscreen='',title='MasterMind Live',height="400")
+  div.mt-16
+    figure.float-left.-ml-10
+       img.pt-4.object-fill(src='/static/assets/timer.png' alt='So many possibilities.',width="375",height="375")
+    p.mt-4.text-gray-900.text-lg.font-serif.leading-loose
+      | #{__lang('welcome.page.details')}
+      b.font-semibold.text-lg.text-black
+        | #{__lang('welcome.page.openSource')}
+  div.mt-10
+    h2.mt-4.text-center.text-gray-900.text-3xl.font-bold
+      | #{__lang('welcome.page.support')}   
+    p.text-center.mt-4.text-gray-900.text-lg.font-serif.leading-loose
+      | !{__lang('welcome.page.support.details')} 
