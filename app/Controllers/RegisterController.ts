@@ -69,9 +69,9 @@ const register = async function(
       username,
       password
     }).save();
-    if (!attemptRegister)
-      // store session id
-      req.session.user_id_token = attemptRegister._id;
+    if (!attemptRegister) throw new TypeError("Oops Something went wrong!");
+    // store session id
+    req.session.user_id_token = attemptRegister._id;
     return res.status(201).redirect(redirectTo);
   } catch (err) {
     next(err);
