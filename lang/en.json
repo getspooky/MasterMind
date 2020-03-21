@@ -1,0 +1,14 @@
+{
+    "welcome.page.title": "Imagine what you could build if you learned programming…",
+    "welcome.page.description": "Using our passion and skill for tech development to empower nonprofits to have more impact. Our dream is to make the world’s most powerful technology available to all organisations and groups working to make positive change, regardless of size, budget or location.",
+    "welcome.page.signup": "Sign in and get started (it's free)",
+    "welcome.page.details": "We believe that citizens need to learn IT and have the thinking skills they need to be creators of the digital economy, not just consumers, and to be active citizens in our technology-driven world . Our economy is evolving rapidly and teachers and business leaders are increasingly recognizing that IT is a new basic skill necessary for economic opportunities and social mobility. ",
+    "welcome.page.openSource": "MasterMind is open source software, so not only is it free to use, you can also help make it better It’s easier than you think to become one of them. ",
+    "welcome.page.support": "Support the Team",
+    "welcome.page.support.details": "Through <a href='https://github.com/getspooky/MasterMind' class='underline text-blue-500'>contributions</a>, <a href='' class='underline text-blue-500'>donations</a>, you allow webpack to thrive. Your donations directly support office hours, continued enhancements, and most importantly, great documentation and learning material!",
+    "global.component.alert.badge": "New",
+    "global.component.alert.message": "Join Our Community via Gitter.mi",
+    "profile.page.title_#1": "Learn computer science ",
+    "profile.page.title_#2": "Change the world.",
+    "profile.page.contribute": "The people who contribute to MasterMind do so for the love of open source, our users and ecosystem, and most importantly, pushing the web forward together."
+}
