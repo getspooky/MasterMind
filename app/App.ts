@@ -21,6 +21,7 @@ import "./Environment";
 import { env } from "../helpers";
 import { compose } from "compose-middleware";
 import { Route } from "../routes/web";
+import Internationalization from "./i18n";
 import { DetectProxy } from "./Middlewares/DetectProxy";
 import { ErrorHandler } from "./Middlewares/ErrorHandler";
 
@@ -71,6 +72,8 @@ app.use(
 
 app.use(cookieParser());
 
+app.use(Internationalization);
+
 // load API Routes
 app.use(compose(DetectProxy, Route));
 
@@ -78,8 +81,8 @@ app.use(compose(DetectProxy, Route));
 if (process.env.APP_ENV === "development") {
   // only use in development
 } else {
+  app.use(ErrorHandler);
 }
-app.use(ErrorHandler);
 
 // Page not Found
 app.use((req: Request, res: Response, next: NextFunction) => res.render("404"));
