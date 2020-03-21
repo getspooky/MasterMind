@@ -45,7 +45,7 @@ const index = async function(req: Request, res: Response): Promise<void> {
  * @returns {void}
  */
 const create = function(req: Request, res: Response): void {
-  return res.status(200).render("Editor", { csrfToken: req["csrfToken"] });
+  return res.status(200).render("Editor", { csrfToken: req.csrfToken() });
 };
 
 /**

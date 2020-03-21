@@ -71,6 +71,6 @@ Route.get("/article/create", Authenticated, ArticleController.create);
 
 Route.post(
   "/article",
-  ComposeMiddleware([Authenticated, csrfProtection, ArticleValidator()]),
+  ComposeMiddleware([Authenticated, ArticleValidator()]),
   ArticleController.store
 );
