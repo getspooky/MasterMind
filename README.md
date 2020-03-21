@@ -5,6 +5,7 @@ Welcome to the MasterMind. We are so excited to have you. With your help, we can
 <p align="center">
     <img src="public/assets/logo.png" alt="MasterMind" style="margin-bottom:20px;margin-top:20px" />
     </br>
+    <a href="#"><img alt="Deployment" src="https://img.shields.io/badge/deployment-Heroku-blueviolet"></a>
     <a href="#"><img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/getspooky/MasterMind"></a>
     <img alt="PRs" src="https://img.shields.io/badge/PRs-Welcome-blue" />
     <a href="https://spectrum.chat/mastermind">
