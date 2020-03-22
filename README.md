@@ -3,7 +3,7 @@
 Welcome to the MasterMind. We are so excited to have you. With your help, we can build out MasterMind to be more stable and better serve our community.
 
 <p align="center">
-    <img src="public/assets/think.png" alt="MasterMind" style="margin-bottom:20px;margin-top:20px" />
+    <img src="public/assets/logo.png" alt="MasterMind" style="margin-bottom:20px;margin-top:20px" />
     </br>
     <a href="#"><img alt="Deployment" src="https://img.shields.io/badge/deployment-Heroku-blueviolet"></a>
     <a href="#"><img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/getspooky/MasterMind"></a>
@@ -79,7 +79,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 ## Support the Team
 
-Through [https://www.patreon.com/user?u=9251520](donations), you allow MasterMind to thrive. Your donations directly support office hours, continued enhancements, and most importantly, great documentation and learning material!
+Through [donations](https://www.patreon.com/user?u=9251520), you allow MasterMind to thrive. Your donations directly support office hours, continued enhancements, and most importantly, great documentation and learning material!
 
 ## License
 
