@@ -16,5 +16,6 @@
     "team.page.title": "Meet the Team",
     "team.page.description": "Contributing to MasterMind is not contributing to an exclusive club. Developers like you can help to rich and vibrant documentation, issuing pull requests to help us cover niche use cases, and to help sustain what you love about MasterMind.",
     "jumbotron.component.title": "Where Citizens share ideas",
-    "jumbotron.component.description": "We are so excited to have you 💓"
+    "jumbotron.component.description": "We are so excited to have you 💓",
+    "errormessage.component.title": "Error"
 }
