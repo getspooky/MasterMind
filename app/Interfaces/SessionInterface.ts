@@ -14,4 +14,5 @@ export interface SessionInterface extends Request {
     user_id_token: string | number;
     destroy?: Function;
   };
+  flash?: Function;
 }
