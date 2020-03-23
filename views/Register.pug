@@ -1,6 +1,7 @@
 extends App.pug
 block content
     form.m-auto.w-full.max-w-lg.mt-24(method="post",action="/register")
+      include ./components/Flash.pug  
       input(type="hidden", value=csrfToken, name="_csrf")
       .mb-6(class='md:flex md:items-center')
         .div(class='md:w-1/3')
