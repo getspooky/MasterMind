@@ -47,7 +47,7 @@ const index = async function(req: Request, res: Response): Promise<void> {
 const create = function(req: SessionInterface, res: Response): void {
   return res.status(200).render("Editor", {
     csrfToken: req.csrfToken(),
-    flash: req.flash("danger")
+    flash: req.flash()
   });
 };
 

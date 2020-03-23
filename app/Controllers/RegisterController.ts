@@ -41,7 +41,7 @@ const redirectTo: string = "/profile";
 const index = function(req: SessionInterface, res: Response): void {
   return res.status(200).render("Register", {
     csrfToken: req.csrfToken(),
-    flash: req.flash("danger")
+    flash: req.flash()
   });
 };
 
