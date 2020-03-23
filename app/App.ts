@@ -13,7 +13,7 @@ import methodOverride from "method-override";
 import session from "express-session";
 import path from "path";
 import helmet from "helmet";
-import flash from "connect-flash";
+import connectFlash from "connect-flash";
 import cookieParser from "cookie-parser";
 import { convertDeltaToHtml } from "node-quill-converter";
 import md5 from "md5";
@@ -74,7 +74,7 @@ app.use(
 app.use(cookieParser());
 
 // Flash messages are stored in the session.
-app.use(flash({ unsafe: true }));
+app.use(connectFlash());
 
 app.use(Internationalization);
 
