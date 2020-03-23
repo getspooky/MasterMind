@@ -80,7 +80,7 @@ const show = async function(req: Request, res: Response): Promise<void> {
 const store = function(req: SessionInterface, res: Response): void {
   const { content, title, status = true }: ArticleInterface = { ...req.body };
   // Finds the validation errors in this request and wraps them in an object with handy functions
-  if (!validationResult(req).isEmpty)
+  if (!validationResult(req).isEmpty())
     throw new TypeError("The given inputs was Invalid");
   // Create a new Instance.
   const attemptCreateArticle = new Article({

@@ -62,7 +62,7 @@ const register = async function(
   try {
     const { username, email, password }: RegisterInterface = { ...req.body };
     // Finds the validation errors in this request and wraps them in an object with handy functions
-    if (!validationResult(req).isEmpty)
+    if (!validationResult(req).isEmpty())
       throw new TypeError("The given inputs was Invalid");
     if (await User.findOne({ email }))
       throw new TypeError("Account already exists!");

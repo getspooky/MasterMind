@@ -60,7 +60,7 @@ const login = async function(
   try {
     const { email, password }: LoginInterface = { ...req.body };
     // Finds the validation errors in this request and wraps them in an object with handy functions
-    if (!validationResult(req).isEmpty)
+    if (validationResult(req).isEmpty())
       return new TypeError("The given inputs was Invalid");
     // Attempt to log the user into the application.
     const attemptLogin = await User.findOne({ email });
