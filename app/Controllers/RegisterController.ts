@@ -7,7 +7,7 @@
  * file that was distributed with this source code.
  */
 
-import { Request, Response, NextFunction } from "express";
+import { Response, NextFunction } from "express";
 import { validationResult } from "express-validator";
 import User from "../Models/User";
 import { RegisterInterface } from "../Interfaces/RegisterInterface";
@@ -34,12 +34,15 @@ const redirectTo: string = "/profile";
  * @desc Display a listing of the resource.
  * @function
  * @name index
- * @param {Request} req
+ * @param {SessionInterface} req
  * @param {Response} res
  * @returns {void}
  */
-const index = function(req: Request, res: Response): void {
-  return res.status(200).render("Register", { csrfToken: req.csrfToken() });
+const index = function(req: SessionInterface, res: Response): void {
+  return res.status(200).render("Register", {
+    csrfToken: req.csrfToken(),
+    flash: req.flash("danger")
+  });
 };
 
 /**
