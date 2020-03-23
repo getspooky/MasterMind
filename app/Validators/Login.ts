@@ -29,7 +29,7 @@ export default function(): Array<ValidationChain> {
       .isEmpty()
       .withMessage("Password is missing")
       .isLength({
-        min: 10
+        min: 5
       })
   ];
 }

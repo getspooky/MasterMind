@@ -29,14 +29,14 @@ export default function(): Array<ValidationChain> {
       .isEmpty()
       .withMessage("Password is missing")
       .isLength({
-        min: 10
+        min: 5
       }),
     check("username")
       .not()
       .isEmpty()
       .withMessage("Username is missing")
       .isLength({
-        min: 10
+        min: 5
       })
       .withMessage("Username must have more than 10 characters")
   ];
