@@ -7,19 +7,20 @@
  * file that was distributed with this source code.
  */
 
-import { Router, Request, Response, NextFunction } from "express";
+import { Response, NextFunction } from "express";
 import { HttpExceptionInterface } from "../Interfaces/HttpExceptionInterface";
+import { SessionInterface } from "../Interfaces/SessionInterface";
 
 export function ErrorHandler(
   err: HttpExceptionInterface,
-  req: Request,
+  req: SessionInterface,
   res: Response,
   next: NextFunction
-) {
+): void {
   let { status, message }: HttpExceptionInterface = err;
   // If err has no specified error code, set error code to 'Internal Server Error (500)'
   if (!status) status = 500;
-  return res.status(status).json({
-    errors: { message }
-  });
+  // Set a flash message by passing the key, followed by the value, to req.flash().
+  req.flash("danger", message as string);
+  return res.status(status).redirect(req.url);
 }
