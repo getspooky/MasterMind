@@ -9,9 +9,7 @@
 
 import * as shell from "shelljs";
 
-shell.cp("-R", "public/js", "dist/public/js/");
-shell.cp("-R", "public/css", "dist/public/css/");
-shell.cp("-R", "public/assets", "dist/public/assets/");
+shell.cp("-R", "public", "dist/public/");
 shell.cp("-R", "lang", "dist/lang/");
 shell.cp("-R", "views", "dist/views/");
 shell.cp("-R", "logs", "dist/logs/");
