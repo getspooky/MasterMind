@@ -40,7 +40,7 @@ export const Route: core.Router = Router();
 Route.use(csrfProtection);
 
 Route.get("/test", (req: Request, res: Response): void => {
-  res.status(200).send("Welcome to MasterMind");
+  res.redirect(300, "/");
 });
 
 Route.get("/", (req: Request, res: Response): void => res.render("Welcome"));
