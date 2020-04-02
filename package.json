@@ -8,7 +8,8 @@
     "build:css": "postcss public/css/tailwind.css -o public/css/index.css",
     "build-ts": "tsc",
     "watch:css": "postcss public/css/tailwind.css -o public/css/index.css -w",
-    "watch-ts": "tsc -w"
+    "watch-ts": "tsc -w",
+    "copy-static-assets": "ts-node copyStaticAssets.ts"
   },
   "repository": {
     "type": "git",
