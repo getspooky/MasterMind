@@ -16,11 +16,11 @@ import { logger } from "./Logger";
  *
  * @var {number}
  */
-const port: number = parseInt(env("APP_PORT")) || 3000;
+const port: number = parseInt(env("APP_PORT")) || 4200;
 
 const prettyHost: string = env("APP_HOST") || "localhost";
 
-const dbHost: string = `mongodb://${env("DB_HOST")}/${env("DB_NAME")}`;
+const dbHost: string = env("DB_HOST");
 
 // Start your app.
 app.listen(port, prettyHost, async err => {
