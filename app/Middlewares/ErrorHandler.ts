@@ -21,6 +21,6 @@ export function ErrorHandler(
   // If err has no specified error code, set error code to 'Internal Server Error (500)'
   if (!status) status = 500;
   // Set a flash message by passing the key, followed by the value, to req.flash().
-  req.flash("danger", message as string);
+  req.flash("danger", message);
   return res.status(status).redirect(req.url);
 }
