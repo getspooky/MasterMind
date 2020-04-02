@@ -9,7 +9,8 @@
     "build-ts": "tsc",
     "watch:css": "postcss public/css/tailwind.css -o public/css/index.css -w",
     "watch-ts": "tsc -w",
-    "copy-static-assets": "ts-node copyStaticAssets.ts"
+    "copy-static-assets": "ts-node copyStaticAssets.ts",
+    "build": "npm run build-ts && npm run copy-static-assets"
   },
   "repository": {
     "type": "git",
