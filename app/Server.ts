@@ -16,14 +16,14 @@ import { logger } from "./Logger";
  *
  * @var {number}
  */
-const port: number = parseInt(env("APP_PORT")) || 4200;
+const port: number = parseInt(env("PORT")) || parseInt(env("APP_PORT")) || 4200;
 
 const prettyHost: string = env("APP_HOST") || "localhost";
 
 const dbHost: string = env("DB_HOST");
 
 // Start your app.
-app.listen(port, prettyHost, async err => {
+app.listen(port, prettyHost, async (err) => {
   if (err) {
     return logger.error(err.message);
   }
@@ -31,7 +31,7 @@ app.listen(port, prettyHost, async err => {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
   });
   logger.appStarted(port, prettyHost);
 });
