@@ -4,6 +4,7 @@
   "description": "It is a humanitarian initiative that aims to serve the community through programming",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon dist/app/Server.js",
     "server": "nodemon app/Server.ts",
     "build:css": "postcss public/css/tailwind.css -o public/css/index.css",
     "build-ts": "tsc",
@@ -52,7 +53,6 @@
     "shelljs": "^0.8.3",
     "supertest": "^4.0.2",
     "tailwindcss": "^1.2.0",
-    "ts-jest": "^25.2.1",
     "tslint-config-airbnb": "^5.11.1",
     "typescript": "^3.8.3",
     "uid": "^1.0.0",
