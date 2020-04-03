@@ -13,3 +13,4 @@ shell.cp("-R", "public", "dist/public/");
 shell.cp("-R", "lang", "dist/lang/");
 shell.cp("-R", "views", "dist/views/");
 shell.cp("-R", "logs", "dist/logs/");
+shell.cp("-R", ".env", "dist/");
