@@ -41,6 +41,28 @@ Our dream is to make the world’s most powerful technology available to all org
 
 We encourage you to contribute to MasterMind! Please check out the [Contributing](/Contributing.md) to MasterMind guide for guidelines about how to proceed.
 
+## Quick Overview
+
+Installation is done using the npm install command:
+
+### Clonning the repo from github
+
+<pre>
+ git clone https://github.com/getspooky/MasterMind.git
+</pre>
+
+### Installing dependencies NPM | YARN
+
+<pre>
+ npm install or yarn install
+</pre>
+
+### Starting server
+
+<pre>
+ npm run server
+</pre>
+
 ## Requirements
 
 MasterMind has a few requirements you should be aware of before installing:
