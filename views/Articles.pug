@@ -9,7 +9,8 @@ block content
             |  Public Members
         a.text-gray-900.cursor-pointer.underline.font-bold.text-xl.mb-2(href=`/article/details?id=${val._id}`) #{val.title}
         p.text-gray-700.text-base.pt-2
-          | !{convertDeltaToHtml(JSON.parse(val.content)).split('.')[0]}...
+          | !{convertDeltaToHtml(JSON.parse(val.content)).substr(0,300)}...
+          a.underline.text-blue-400(href=`/article/details?id=${val._id}`) learn more
       .flex.items-center.full-w.bg
         img.w-10.h-10.rounded-full.mr-4(src=`https://www.gravatar.com/avatar/${md5(val.userId.email)}?s=32&d=identicon&r=PG` alt='avatar')
         .text-sm
