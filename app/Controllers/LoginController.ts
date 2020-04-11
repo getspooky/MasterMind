@@ -37,10 +37,10 @@ const redirectTo: URL | string = "/profile";
  * @param {Response} res
  * @returns {void}
  */
-const index = function(req: SessionInterface, res: Response): void {
+const index = function (req: SessionInterface, res: Response): void {
   return res.status(200).render("Login", {
     csrfToken: req.csrfToken(),
-    flash: req.flash()
+    flash: req.flash(),
   });
 };
 
@@ -52,7 +52,7 @@ const index = function(req: SessionInterface, res: Response): void {
  * @param {Response} res
  * @returns {void}
  */
-const login = async function(
+const login = async function (
   req: SessionInterface,
   res: Response,
   next: NextFunction
@@ -61,7 +61,7 @@ const login = async function(
     const { email, password }: LoginInterface = { ...req.body };
     // Finds the validation errors in this request and wraps them in an object with handy functions
     if (!validationResult(req).isEmpty())
-      return new TypeError("The given inputs was Invalid");
+      throw new TypeError("The given inputs was Invalid");
     // Attempt to log the user into the application.
     const attemptLogin = await User.findOne({ email });
     if (!attemptLogin) throw new TypeError("Account does not exists!");
