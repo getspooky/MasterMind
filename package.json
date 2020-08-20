@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/getspooky/MasterMind#readme",
   "dependencies": {
-    "bcrypt": "^4.0.1",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "chalk": "^3.0.0",
     "compose-middleware": "^5.0.1",
